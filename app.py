@@ -32,7 +32,7 @@ def predict():
     else:
         prediction='Congrats ! you are Healthy' 
     #return render_template('predict.html', prediction_text='Employee Salary should be $ {}'.format(output))
-    return render_template("result.html", prediction_text=prediction)
+    return render_template("result.html", prediction_text=' {}'.format(prediction))
 
 if __name__ == "__main__":
     app.run(debug=True)
