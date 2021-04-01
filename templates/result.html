@@ -214,7 +214,7 @@
   <body>
          
 		<div class="testbox">
-      <form action="{{ url_for('predict')}}" method="post"> <!--/result-->
+      
         <div class="banner">
           <h1>Diabetes Prediction</h1>
         </div>
@@ -224,13 +224,13 @@
           
            {% if prediction==1 %}
 			 <h2 style="color:Red; text-align:center;">We are Sorry!</h2>
-			 <h3 style="color:Grey text-align: center;">
+			 <h3 style="color:Grey; text-align:center;">
 				 <span class='danger'>You have DIABETES.
 				 </span>
 			 </h3>
 	   {% elif prediction==0 %}
-			 <h2 style="color:Green; text-align: center;">Congratulations! </h2>
-			 <h3 style="color:Grey; text-align: center;">
+			 <h2 style="color:Green; text-align:center;">Congratulations! </h2>
+			 <h3 style="color:Grey; text-align:center;">
 				 <span class='safe'>You DO NOT have diabetes.
 				 </span>
 			 </h3>
@@ -239,10 +239,8 @@
         </fieldset>
         <br/>
         
-        <div class="btn-block">
-          <button type="submit" value="Submit">Submit</button>
-        </div>
-      </form>
+        
+      
     </div>
             
 	  
