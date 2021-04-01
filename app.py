@@ -11,8 +11,10 @@ import pickle
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 
-app = Flask(__name__)
+
 model = pickle.load(open('model1.pkl', 'rb'))
+
+app = Flask(__name__)
 
 @app.route('/')
 def home():
@@ -23,17 +25,22 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
-    result = model.predict(final_features)
+    if request.method == 'POST':
+        preg = int(request.form['Pregnancies'])
+        glucose = int(request.form['Glucose'])
+        bp = int(request.form['BloodPressure'])
+        st = int(request.form['SkinThickness'])
+        insulin = int(request.form['Insulin'])
+        bmi = float(request.form['BMI'])
+        dpf = float(request.form['DiabetesPedigreeFunction'])
+        age = int(request.form['Age'])
+        
+    data = np.array([[preg, glucose, bp, st, insulin, bmi, dpf, age]])
+    my_prediction = model.predict(data)
 
-    if(int(result)==1):
-        prediction='Sorry ! Suffering'
-    else:
-        prediction='Congrats ! you are Healthy' 
     #return render_template('predict.html', prediction_text='Employee Salary should be $ {}'.format(output))
     #return render_template("result.html", prediction_text=prediction)
-    return(render_template("result.html", prediction=prediction))
+    return render_template("result.html", prediction=my_prediction)
 
 if __name__ == "__main__":
     app.run(debug=True)
