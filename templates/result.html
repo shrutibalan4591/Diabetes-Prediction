@@ -213,27 +213,27 @@
   </head>
   <body>
          
-		<div class="banner">
+		<div class="testbox">
+      <form action="{{ url_for('predict')}}" method="post"> <!--/result-->
+        <div class="banner">
           <h1>Diabetes Prediction</h1>
         </div>
-         <div class="result"> 
-		 <fieldset>
-			 <legend> Prediction </legend>
-        {% if prediction==1 %}
-			 <h2 style="color:Red;">We are Sorry!</h2>
-			 <h3 style="color:Grey">
-				 <span class='danger'>You have DIABETES.
-				 </span></h3>
-		<!--<img class="jpeg" src="{{ url_for('static', filename='diabetes.jpg') }}" alt="Diabetes Image" width="900" height="300" style="vertical-align:middle">-->
-	{% elif prediction==0 %}
-			 <h2 style="color:Green;">Congratulations! </h2>
-			 <h3 style="color:Grey;">
-				 <span class='safe'>You DO NOT have diabetes.
-				 </span></h3>
-		<!--<img class="jpeg" src="{{ url_for('static', filename='no-diabetes.jpg') }}" alt="Not Diabetes Image" width="900" height="300" style="vertical-align:middle">-->
-	{% endif %}
-		 </fieldset>
-	  </div>   
+        <br/>
+        <fieldset>
+          <legend>Patient Information</legend>
+          <div class="item">
+            <label for="Pregnancies">Pregnancies : <span>*</span></label>
+            <input type="text" id="Pregnancies" name="Pregnancies" required/>
+          </div>
+          
+        </fieldset>
+        <br/>
+        
+        <div class="btn-block">
+          <button type="submit" value="Submit">Submit</button>
+        </div>
+      </form>
+    </div>
             
 	  
     
