@@ -212,23 +212,29 @@
     </style>
   </head>
   <body>
-         <div class="testbox">
+         
 		<div class="banner">
           <h1>Diabetes Prediction</h1>
         </div>
          <div class="result"> 
 		 <fieldset>
         {% if prediction==1 %}
-		<h1>Prediction: <span class='danger'>Oops! You have DIABETES.</span></h1>
-		<img class="jpeg" src="{{ url_for('static', filename='diabetes.jpg') }}" alt="Diabetes Image" width="900" height="300" style="vertical-align:middle">
+			 <h2 style="color:Black;">Prediction:</h2>
+			 <h3 style="color:Red">
+				 <span class='danger'>Oops! You have DIABETES.
+				 </span></h3>
+		<!--<img class="jpeg" src="{{ url_for('static', filename='diabetes.jpg') }}" alt="Diabetes Image" width="900" height="300" style="vertical-align:middle">-->
 	{% elif prediction==0 %}
-		<h1>Prediction: <span class='safe'>Great! You DON'T have diabetes.</span></h1>
-		<img class="jpeg" src="{{ url_for('static', filename='no-diabetes.jpg') }}" alt="Not Diabetes Image" width="900" height="300" style="vertical-align:middle">
+			 <h2 style="color:Black;">Prediction: </h2>
+			 <h3 style="color:Green;">
+				 <span class='safe'>Great! You DON'T have diabetes.
+				 </span></h3>
+		<!--<img class="jpeg" src="{{ url_for('static', filename='no-diabetes.jpg') }}" alt="Not Diabetes Image" width="900" height="300" style="vertical-align:middle">-->
 	{% endif %}
 		 </fieldset>
 	  </div>   
             
-	  </div>
+	  
     
 	
 	<footer id="main-footer">
