@@ -1,3 +1,3 @@
 # Diabetes-Prediction
 
-https://know-your-sugars.herokuapp.com/
+App Link: https://know-your-sugars.herokuapp.com/
